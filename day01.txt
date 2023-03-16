@@ -1,0 +1,9 @@
+1. SELECT students.*
+FROM students 
+WHERE id = (
+    SELECT sinhVienid
+    FROM scores 
+    WHERE diemToan = (SELECT MAX(diemToan) FROM scores)
+    );
+
+2. 
