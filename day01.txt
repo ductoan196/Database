@@ -6,4 +6,12 @@ WHERE id = (
     WHERE diemToan = (SELECT MAX(diemToan) FROM scores)
     );
 
-2. 
+2. SELECT students.*
+FROM students 
+WHERE id=(
+    SELECT sinhVienid
+    FROM scores
+    WHERE diemVan = (SELECT MIN(diemVan) FROM scores)
+    );
+
+3. Bài này em chưa biết cách đưa ra 2 giá trị cùng lúc
