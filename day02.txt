@@ -1,0 +1,17 @@
+ 1.
+
+​SELECT tbl_diem.sinhvien_id, SUM(diem_toan) AS tong_diem_toan
+FROM tbl_diem
+GROUP BY(sinhvien_id)
+ORDER BY tong_diem_toan DESC
+LIMIT 1;
+
+2. 
+
+SELECT tbl_diem.sinhvien_id, SUM(diem_van) AS tong_diem_van
+FROM tbl_diem
+GROUP BY(sinhvien_id)
+ORDER BY tong_diem_van DESC
+LIMIT 1;
+
+3. 
