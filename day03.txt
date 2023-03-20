@@ -102,4 +102,12 @@ FROM tblkhoa JOIN tblsinhvien
 ON tblkhoa.Makhoa = tblsinhvien.Makhoa
 GROUP BY tblsinhvien.Makhoa;
 
+16. 
+SELECT tblsinhvien.* 
+FROM tblsinhvien JOIN tblhuongdan
+ON tblsinhvien.Masv = tblhuongdan.Masv
+JOIN tbldetai 
+ON tblhuongdan.Madt = tbldetai.Madt
+WHERE tblsinhvien.Quequan = tbldetai.Noithuctap;
 
+17.
