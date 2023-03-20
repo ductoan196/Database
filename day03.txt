@@ -111,3 +111,13 @@ ON tblhuongdan.Madt = tbldetai.Madt
 WHERE tblsinhvien.Quequan = tbldetai.Noithuctap;
 
 17.
+SELECT tblsinhvien.* 
+FROM tblsinhvien JOIN tblhuongdan
+ON tblsinhvien.Masv = tblhuongdan.Masv
+WHERE tblhuongdan.KetQua IS NULL;
+
+18. 
+SELECT tblsinhvien.Masv, tblsinhvien.Hotensv
+FROM tblsinhvien JOIN tblhuongdan
+ON tblsinhvien.Masv = tblhuongdan.Masv
+WHERE tblhuongdan.KetQua= 0;
