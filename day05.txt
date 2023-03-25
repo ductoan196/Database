@@ -1,4 +1,4 @@
-Phân tích: Hệ thống đặt phòng sự kiện để sắp xếp các cuộc hẹn.
+Hệ thống đặt phòng sự kiện để sắp xếp các cuộc hẹn.
 
 1. Bảng dữ liệu Phòng (tbl_rooms):
 id
@@ -19,11 +19,9 @@ id
 customer_id
 service_id
 menu_id
-
-Thời gian bắt đầu (Start time): thời gian bắt đầu của đặt phòng
-Thời gian kết thúc (End time): thời gian kết thúc của đặt phòng
-Customer ID: định danh khách hàng đặt phòng
-Room ID: định danh phòng được đặt
+system_id
+start_at
+end_at
 
 4. Bảng dữ liệu Hệ thống cơ sở (tbl_systems):
 id
@@ -60,9 +58,11 @@ name
 email
 password
 
-9. News
+9. Bảng dữ liệu tin tứ: tbl_news
 id
 title
 desctiption
 date
+
+
 
