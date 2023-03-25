@@ -8,35 +8,40 @@ description
 price
 capacity
 
-2. Bảng dữ liệu Khách hàng (Customer table):
+2. Bảng dữ liệu Admin: tbl_admins
 id
 name
 email
-phone
+password
 
 3. Bảng dữ liệu Đặt phòng (tbl_bookings):
 id
-customer_id
-service_id
-menu_id
-system_id
+customer_name
+customer_phone
 start_at
 end_at
 
-4. Bảng dữ liệu Hệ thống cơ sở (tbl_systems):
+4. tbl_booking_detail
+id
+service_id
+menu_id
+system_id
+
+
+5. Bảng dữ liệu Hệ thống cơ sở (tbl_systems):
 id
 name
 address
 phone
 
-5. Bảng dữ liệu Dịch vụ (tbl_services):
+6. Bảng dữ liệu Dịch vụ (tbl_services):
 id
 name
 description
 price
 time
 
-6. Bảng dữ liệu Thực đơn (tbl_menu):
+7. Bảng dữ liệu Thực đơn (tbl_menu):
 id
 name
 description
@@ -44,7 +49,7 @@ price
 quantity
 
 
-7. Bảng dữ liệu Voucher (tbl_vouchers):
+8. Bảng dữ liệu Voucher (tbl_vouchers):
 id
 name
 desctiption
@@ -52,11 +57,7 @@ value
 start_at
 end_at
 
-8. Bảng dữ liệu Admin: tbl_admins
-id
-name
-email
-password
+
 
 9. Bảng dữ liệu tin tứ: tbl_news
 id
