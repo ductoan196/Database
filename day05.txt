@@ -42,15 +42,15 @@ price: int(11)
 time
 
 7. Bảng dữ liệu Thực đơn (tbl_menu):
-id
-name
+id: int(11)
+name: varchar(255)
 description: text
 price
 
 
 8. Bảng dữ liệu Voucher (tbl_vouchers):
 id: int(11)
-name
+name: varchar(255)
 room_id
 desctiption: text
 value: int(11)
@@ -60,10 +60,10 @@ end_at
 
 
 9. Bảng dữ liệu tin tức: tbl_news
-id
+id: int(11)
 title: text
 desctiption: text
-date
+post_at: date
 
 
 
