@@ -1,68 +1,68 @@
 Hệ thống đặt phòng sự kiện để sắp xếp các cuộc hẹn.
 
 1. Bảng dữ liệu Phòng (tbl_rooms):
-id
-system_id
-type
-description
-price
-capacity
+id: int(11)
+system_id: int(11)
+type: varchar(255)
+description : text
+price: int(11)
+capacity: int(11)
 
 2. Bảng dữ liệu Admin: tbl_admins
-id
-name
-email
-password
+id: int(11)
+name: varchar(255)
+email: varchar(255)
+password: varchar(255)
 
 3. Bảng dữ liệu Đặt phòng (tbl_bookings):
-id
-customer_name
+id: int(11)
+customer_name: varchar(255)
 customer_phone
 start_at
 end_at
 
 4. tbl_booking_detail
-id
-service_id
-menu_id
-system_id
+id: int(11)
+service_id: int(11)
+menu_id: int(11)
+system_id: int(11)
 
 
 5. Bảng dữ liệu Hệ thống cơ sở (tbl_systems):
-id
-name
-address
-phone
+id: int(11)
+name: varchar(255)
+address: varchar(255)
+phone: varchar(255)
 
 6. Bảng dữ liệu Dịch vụ (tbl_services):
-id
-name
-description
-price
+id: int(11)
+name: varchar(255)
+description: text
+price: int(11)
 time
 
 7. Bảng dữ liệu Thực đơn (tbl_menu):
 id
 name
-description
+description: text
 price
-quantity
 
 
 8. Bảng dữ liệu Voucher (tbl_vouchers):
-id
+id: int(11)
 name
-desctiption
-value
+room_id
+desctiption: text
+value: int(11)
 start_at
 end_at
 
 
 
-9. Bảng dữ liệu tin tứ: tbl_news
+9. Bảng dữ liệu tin tức: tbl_news
 id
-title
-desctiption
+title: text
+desctiption: text
 date
 
 
