@@ -1,0 +1,68 @@
+Phân tích: Hệ thống đặt phòng sự kiện để sắp xếp các cuộc hẹn.
+
+1. Bảng dữ liệu Phòng (tbl_rooms):
+id
+system_id
+type
+description
+price
+capacity
+
+2. Bảng dữ liệu Khách hàng (Customer table):
+id
+name
+email
+phone
+
+3. Bảng dữ liệu Đặt phòng (tbl_bookings):
+id
+customer_id
+service_id
+menu_id
+
+Thời gian bắt đầu (Start time): thời gian bắt đầu của đặt phòng
+Thời gian kết thúc (End time): thời gian kết thúc của đặt phòng
+Customer ID: định danh khách hàng đặt phòng
+Room ID: định danh phòng được đặt
+
+4. Bảng dữ liệu Hệ thống cơ sở (tbl_systems):
+id
+name
+address
+phone
+
+5. Bảng dữ liệu Dịch vụ (tbl_services):
+id
+name
+description
+price
+time
+
+6. Bảng dữ liệu Thực đơn (tbl_menu):
+id
+name
+description
+price
+quantity
+
+
+7. Bảng dữ liệu Voucher (tbl_vouchers):
+id
+name
+desctiption
+value
+start_at
+end_at
+
+8. Bảng dữ liệu Admin: tbl_admins
+id
+name
+email
+password
+
+9. News
+id
+title
+desctiption
+date
+
