@@ -7,9 +7,11 @@ type: varchar(255)
 description : text
 price: int(11)
 capacity: int(11)
+status: varchar(255)
 
 2. Bảng dữ liệu Admin: tbl_admins
 id: int(11)
+booking_id: int(11)
 name: varchar(255)
 email: varchar(255)
 password: varchar(255)
@@ -18,6 +20,7 @@ password: varchar(255)
 id: int(11)
 customer_name: varchar(255)
 customer_phone
+status: varchar(255)
 start_at
 end_at
 
@@ -27,12 +30,12 @@ service_id: int(11)
 menu_id: int(11)
 system_id: int(11)
 
-
 5. Bảng dữ liệu Hệ thống cơ sở (tbl_systems):
 id: int(11)
 name: varchar(255)
 address: varchar(255)
 phone: varchar(255)
+status: varchar(255)
 
 6. Bảng dữ liệu Dịch vụ (tbl_services):
 id: int(11)
@@ -54,6 +57,7 @@ name: varchar(255)
 room_id
 desctiption: text
 value: int(11)
+status: varchar(255)
 start_at
 end_at
 
