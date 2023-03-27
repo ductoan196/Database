@@ -1,73 +1,73 @@
 Hệ thống đặt phòng sự kiện để sắp xếp các cuộc hẹn.
 
-1. Bảng dữ liệu Phòng (tbl_rooms):
-id: int(11)
-system_id: int(11)
-type: varchar(255)
-description : text
-price: int(11)
-capacity: int(11)
-status: varchar(255)
+1. Bảng dữ liệu Phòng rooms
+id int(11)
+system_id int(11)
+type varchar(255)
+description  text
+price DECIMAL
+capacity int(11)
+status varchar(255)
 
-2. Bảng dữ liệu User: users
-id: int(11)
-name: varchar(255)
-email: varchar(255)
-password: varchar(255)
+2. Bảng dữ liệu User users
+id int(11)
+name varchar(255)
+email varchar(255)
+password varchar(255)
 
-3. Bảng dữ liệu Đặt phòng: bookings
-id: int(11)
-customer_name: varchar(255)
+3. Bảng dữ liệu Đặt phòng bookings
+id int(11)
+customer_name varchar(255)
 customer_phone
-status: varchar(255)
-start_at
-end_at
+status varchar(255)
+price 
+start_at DATE
+end_at DATE
 
-4. tbl_booking_detail
-id: int(11)
-room_id: int(11)
-service_id: int(11)
-menu_id: int(11)
-system_id: int(11)
+4. Bảng chi tiết đặt phòng: booking_detail
+id int(11)
+room_id int(11)
+service_id int(11)
+menu_id int(11)
+system_id int(11)
 
-5. Bảng dữ liệu Hệ thống cơ sở (tbl_systems):
-id: int(11)
-name: varchar(255)
-address: varchar(255)
-phone: varchar(255)
-status: varchar(255)
+5. Bảng dữ liệu Hệ thống cơ sở locations
+id int(11)
+name varchar(255)
+address varchar(255)
+phone varchar(255)
+status varchar(255)
 
-6. Bảng dữ liệu Dịch vụ (tbl_services):
-id: int(11)
-name: varchar(255)
-description: text
-price: int(11)
-time
+6. Bảng dữ liệu Dịch vụ services
+id int(11)
+name varchar(255)
+description text
+price int(11)
 
-7. Bảng dữ liệu Thực đơn (tbl_menu):
-id: int(11)
-name: varchar(255)
-description: text
+7. Bảng dữ liệu Thực đơn menus
+id int(11)
+name varchar(255)
+description text
 price
 
 
-8. Bảng dữ liệu Voucher (tbl_vouchers):
-id: int(11)
-name: varchar(255)
+8. Bảng dữ liệu vouchers
+id int(11)
+name varchar(255)
 room_id
-desctiption: text
-value: int(11)
-status: varchar(255)
-start_at
-end_at
+desctiption text
+value int(11)
+status varchar(255)
+start_at DATE
+end_at DATE
 
 
 
-9. Bảng dữ liệu tin tức: tbl_news
-id: int(11)
-title: text
-desctiption: text
-post_at: date
+9. Bảng dữ liệu tin tức news
+id int(11)
+title text
+desctiption text
+post_at date
 
 
 
