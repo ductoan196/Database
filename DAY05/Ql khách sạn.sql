@@ -5,7 +5,10 @@ CREATE TABLE `rooms` (
   `description` text,
   `price` decimal,
   `capacity` int(11),
-  `status` varchar(255)
+  `status` varchar(255),
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 CREATE TABLE `users` (
@@ -13,7 +16,10 @@ CREATE TABLE `users` (
   `username` varchar(255),
   `email` varchar(255),
   `password` varchar(255),
-  `status` varchar(255)
+  `status` varchar(255),
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 CREATE TABLE `bookings` (
@@ -22,7 +28,10 @@ CREATE TABLE `bookings` (
   `total_price` decimal,
   `status` varchar(255),
   `check_in` date,
-  `check_out` date
+  `check_out` date,
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 CREATE TABLE `bookings_detail` (
@@ -31,7 +40,9 @@ CREATE TABLE `bookings_detail` (
   `room_id` int(11),
   `menu_id` int(11),
   `total_price` decimal,
-  `creat_at` date
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 CREATE TABLE `locations` (
@@ -39,21 +50,30 @@ CREATE TABLE `locations` (
   `name` varchar(255),
   `address` varchar(255),
   `phone` varchar(255),
-  `status` varchar(255)
+  `status` varchar(255),
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 CREATE TABLE `services` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT,
   `menu_id` int(11),
   `room_id` int(11),
-  `news_id` int(11)
+  `news_id` int(11),
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 CREATE TABLE `menus` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
   `description` text,
-  `price` decimal
+  `price` decimal,
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 CREATE TABLE `vouchers` (
@@ -64,15 +84,18 @@ CREATE TABLE `vouchers` (
   `desctiption` text,
   `discount` int(11),
   `status` varchar(255),
-  `start_at` DATE,
-  `end_at` DATE
+  `start_at` timestamp,
+  `end_at` timestamp
 );
 
 CREATE TABLE `news` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT,
   `title` text,
   `desctiption` text,
-  `post_at` date
+  `post_at` date,
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 CREATE TABLE `pricing` (
@@ -80,7 +103,10 @@ CREATE TABLE `pricing` (
   `name` varchar(255),
   `price` decimal,
   `room_id` int(11),
-  `menu_id` int(11)
+  `menu_id` int(11),
+  `creat_at` timestamp,
+  `update_at` timestamp,
+  `delete_at` timestamp
 );
 
 ALTER TABLE `rooms` ADD FOREIGN KEY (`id`) REFERENCES `bookings_detail` (`room_id`);
