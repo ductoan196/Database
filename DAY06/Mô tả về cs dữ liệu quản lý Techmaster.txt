@@ -1,0 +1,8 @@
+Hệ thống quản lý giáo viên và học sinh của Techmaster bao gồm
+
+1. Bảng students: 
+Chứa các thông tin của sinh viên:
++ tên
++ email
++ số điện thoại
++ lớp học

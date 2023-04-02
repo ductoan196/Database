@@ -1,3 +1,4 @@
 vouchers: nên có một bảng trung gian (model, type, voucher Id)
+bảng menus: thêm status
 bảng service: thừa -> bỏ
 cần thêm bảng amount: xử lý tiền trong những ngày đặc biệt(start_at, end_at), bảng availability: tính khả dụng của phần giá cả
