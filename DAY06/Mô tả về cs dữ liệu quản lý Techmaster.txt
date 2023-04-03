@@ -1,8 +1,39 @@
 Hệ thống quản lý giáo viên và học sinh của Techmaster bao gồm
 
 1. Bảng students: 
-Chứa các thông tin của sinh viên:
-+ tên
-+ email
-+ số điện thoại
-+ lớp học
+Chứa các thông tin của sinh viên: name, email, phone, lớp đang theo học, status
+Chứa khóa ngoại tới bảng users và classes
+
+2. Bảng teachers:
+Chứa các thông tin của giáo viên: name, email, phone, môn đang giảng dạy, status
+Chứa khóa ngoại tới bảng người dùng và môn học	
+
+3. Bảng users để quản lý sinh viên và giáo viên: 
+Chứa các thông tin: name, email, phone, class_id, subject_id, roles, status
+Trong đó: roles chứa thông tin vai trò của người dùng là sinh viên hoặc giáo viên
+
+4. Bảng classes:
+Chứa các thông tin lớp học: name (tên lớp: ví dụ Java 17), ngày bắt đầu start_at, ngày kết thúc khóa end_at
+
+5. Bảng subjects: 
+Chứa các thông tin môn học: name (tên môn: ví dụ Database), teacher_id, class_id ngày bắt đầu start_at, ngày kết thúc môn end_at
+Chứa khóa ngoại tới các bảng giáo viên và lớp học
+
+6. Bảng lessons:
+Chứa các thông tin về buổi học:name (tên buổi: ví dụ Buổi 1), subject_id, ngày học date, status
+Chứa khóa ngoại tới bảng môn học
+
+7. Bảng attendances: 
+Chứa các thông tin về điểm danh: date, teacher_id, student_id, lesson_id, vắng mặt hay không: is_present, status
+Chứa khóa ngoại tới các bảng: giáo viên, học sinh, buổi học
+
+8. Bảng lectures: 
+Chứa các thông tin về bài giảng: nội dung bài giảng, file_path (link chứa tài liệu), giáo viên, buổi học nào, status
+Chứa khóa ngoại tới các bảng: giáo viên, buổi học
+
+9. Bảng homeworks
+Chứa các thông tin về bài tập gồm: nội dung bài tập, giáo viên đăng bài, buổi học nào, status
+Chứa khóa ngoại tới các bảng giáo viên, buổi học
+
+10. Bảng homework_scores
+Chứa các thông tin về điểm bài tập bao gồm:id học sinh, id bài tập, điểm được chấm, ghi chú tới học viên, status

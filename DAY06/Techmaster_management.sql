@@ -5,11 +5,11 @@ CREATE TABLE `users` (
   `phone` varchar(255) NOT NULL,
   `class_id` varchar(255),
   `subject_id` varchar(255),
-  `role_id` int(11) NOT NULL,
+  `role` enum,
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 CREATE TABLE `students` (
@@ -22,7 +22,7 @@ CREATE TABLE `students` (
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 CREATE TABLE `teachers` (
@@ -35,45 +35,46 @@ CREATE TABLE `teachers` (
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 CREATE TABLE `classes` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL,
+  `start_at` date NOT NULL,
+  `end_at` date NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `teacher_id` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
+  `start_at` date NOT NULL,
+  `end_at` date NOT NULL,
   `class_id` int(11) NOT NULL,
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 CREATE TABLE `lessons` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL,
   `subject_id` int(11) NOT NULL,
+  `date` date NOT NULL,
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
-CREATE TABLE `attendance` (
+CREATE TABLE `attendances` (
   `id` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `date` datetime NOT NULL,
   `teacher_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
   `lesson_id` int(11) NOT NULL,
@@ -81,7 +82,7 @@ CREATE TABLE `attendance` (
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 CREATE TABLE `lectures` (
@@ -93,7 +94,7 @@ CREATE TABLE `lectures` (
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 CREATE TABLE `homeworks` (
@@ -104,7 +105,7 @@ CREATE TABLE `homeworks` (
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 CREATE TABLE `homework_scores` (
@@ -112,10 +113,11 @@ CREATE TABLE `homework_scores` (
   `student_id` int(11) NOT NULL,
   `homework_id` int(11) NOT NULL,
   `score` int(11) NOT NULL,
+  `note` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT (current_timestamp()),
   `updated_at` timestamp NOT NULL DEFAULT (current_timestamp()),
-  `deleted_at` timestamp 
+  `deleted_at` timestamp DEFAULT NULL
 );
 
 ALTER TABLE `classes` ADD FOREIGN KEY (`id`) REFERENCES `users` (`class_id`);
@@ -136,11 +138,11 @@ ALTER TABLE `classes` ADD FOREIGN KEY (`id`) REFERENCES `subjects` (`class_id`);
 
 ALTER TABLE `subjects` ADD FOREIGN KEY (`id`) REFERENCES `lessons` (`subject_id`);
 
-ALTER TABLE `lessons` ADD FOREIGN KEY (`id`) REFERENCES `attendance` (`lesson_id`);
+ALTER TABLE `lessons` ADD FOREIGN KEY (`id`) REFERENCES `attendances` (`lesson_id`);
 
-ALTER TABLE `teachers` ADD FOREIGN KEY (`id`) REFERENCES `attendance` (`teacher_id`);
+ALTER TABLE `teachers` ADD FOREIGN KEY (`id`) REFERENCES `attendances` (`teacher_id`);
 
-ALTER TABLE `students` ADD FOREIGN KEY (`id`) REFERENCES `attendance` (`student_id`);
+ALTER TABLE `students` ADD FOREIGN KEY (`id`) REFERENCES `attendances` (`student_id`);
 
 ALTER TABLE `teachers` ADD FOREIGN KEY (`id`) REFERENCES `lectures` (`teacher_id`);
 
